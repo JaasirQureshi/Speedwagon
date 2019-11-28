@@ -48,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.vehicle:
                             selectedFrag = new VehiclesFragment();
                             break;
-
+                        case R.id.mechanic:
+                            selectedFrag = new MechanicFrag();
+                            break;
+                        case R.id.service:
+                            selectedFrag = new ServicecFrag();
+                            break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.frag_contain,
                             selectedFrag).commit();
@@ -72,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return false;
         }
+        else if(id == R.id.Contact){
+            Intent intents = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(intents);
+            return false;
+        }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
